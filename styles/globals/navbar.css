@@ -73,9 +73,13 @@ nav .logo .link a {
     50.25% 49.75%,
     49.75% 50.25%
   );
+  height: 100vh;
+  inset: 0;
+  width: 100vw;
   pointer-events: none;
   opacity: 0;
   z-index: 17;
+  padding: 20px;
 }
 
 .col {
@@ -111,6 +115,7 @@ nav .logo .link a {
     background: rgb(255, 255, 255);
     margin-inline: 10px;
   }
+
   .nav-items {
     flex: 2;
   }

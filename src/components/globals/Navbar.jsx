@@ -3,6 +3,7 @@ import "../../../styles/globals/navbar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { FiArrowDownRight, FiArrowRight, FiExternalLink } from "react-icons/fi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,15 @@ export default function Navbar() {
 
   const tl = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     tl.current = gsap.timeline({ paused: true });
 
-    tl.current.to(menuRef.current, { duration: 0.3, opacity: 1 });
+    tl.current.to(menuRef.current, {
+      // takes the menuref from its initial opacity of 0 to 1 within 300ms
+      duration: 0.3,
+      opacity: 1,
+    });
+    // takes the menuref from its closed clippath polygon to the one below (which opens it halfway)havjng the same time as the one above and starting 300ms bwefore the abive, whuch technically looks like they will start together
     tl.current.to(
       menuRef.current,
       {
@@ -27,6 +33,8 @@ export default function Navbar() {
       "-=0.3"
     );
 
+    // this is the aniomation that followws that opens it comletelly
+
     tl.current.to(menuRef.current, {
       duration: 1,
       ease: "power3.inOut",
@@ -34,6 +42,7 @@ export default function Navbar() {
       pointerEvents: "all",
     });
 
+    // this use to animate the vertival dividing bar that shows befprre the menurRef because its starting at -0.75 before the menuref(which stsarts at 300ms)
     tl.current.to(
       dividerRef.current,
       {
@@ -43,12 +52,7 @@ export default function Navbar() {
       },
       "-=0.75"
     );
-
-    return () => {
-      // Cleanup animations on unmount
-      tl.current.kill();
-    };
-  }, []);
+  });
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -98,6 +102,9 @@ export default function Navbar() {
             </div>
             <div className="link">
               <Link to="/team">Team</Link>
+            </div>
+            <div className="link">
+              <Link to="/blog">Blog</Link>
             </div>
 
             <div className="link">
@@ -196,23 +203,26 @@ export default function Navbar() {
 
       <div
         ref={menuRef}
-        className="fixed top-0 left-0 flex justify-between w-screen h-screen text-white uppercase bg-black menu"
+        className="fixed flex justify-between w-screen text-white uppercase bg-black menu"
       >
-        <div className="flex flex-col justify-between px-5 mb-5">
-          <div className="text-[2rem] pt-5">
+        <div className="flex flex-col justify-between ">
+          <div className="text-[2rem]">
             <Link to={"/"} className="relative" onClick={handleClose}>
               Inkly{" "}
-              <div className="text-[#ff9900] text-7xl absolute -top-8 -right-5">
+              <div className="text-[#ff9900] text-7xl absolute bottom-0 -right-5">
                 .
               </div>
             </Link>
           </div>
-          <div className="flex flex-col gap-5 mb-10 text-2xl md:text-3xl md:pb-0 ">
+          <div className="flex flex-col gap-5 text-2xl md:text-3xl md:pb-0 ">
             <div className="link" onClick={handleClose}>
               <Link to="/about">About</Link>
             </div>
             <div className="link" onClick={handleClose}>
               <Link to="/contact">Contact</Link>
+            </div>
+            <div className="link" onClick={handleClose}>
+              <Link to="/blog">Blog</Link>
             </div>
             <div className="link" onClick={handleClose}>
               <Link to="/gallery">Gallery</Link>
@@ -231,12 +241,13 @@ export default function Navbar() {
 
         {/* tagline */}
 
-        <div className="flex flex-col items-center justify-between pt-5 pl-5 text-lg -10 md:text-2xl">
+        <div className="flex flex-col items-end justify-between pl-5 text-base -10 md:text-2xl">
           <div className="flex items-center gap-5 ">
             <p className="pl-5">
-              Artistic <span className="text-[#ff9900] uppercase">Mastery</span>
+              Artistic <br />
+              <span className="text-[#ff9900] uppercase">Mastery</span>
             </p>
-            <div className="pr-5 close-btn close">
+            <div className="close-btn close">
               <svg
                 onClick={handleClose}
                 style={{ objectFit: "cover" }}
@@ -274,21 +285,22 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="ml-5">
+          <div className="text-right">
             <div>
-              <p to="/contact">
-                Talk with an expert <br /> at &nbsp;
+              <p>Talk to an expert</p>
+              <div className="flex items-center gap-5 p-2 text-white uppercase">
+                <FiArrowRight className="text-white" />
                 <Link
                   to={"/contact"}
-                  className="text-[#ff9900] uppercase"
+                  className="bg-[#ff9900] whitespace-nowrap w-max flex items-center px-2 py-0"
                   onClick={handleClose}
                 >
-                  Inkly.
+                  <p className="text-black"> Inkly.</p>
                 </Link>
-              </p>
+              </div>
             </div>
           </div>
-          <div className="mb-10">
+          <div>
             <div>
               <Link to="/book" onClick={handleClose}>
                 Book a demo
