@@ -7,7 +7,15 @@ export default function Herosection() {
       <Navbar />
 
       <div className="absolute inset-0 bg-[#8099eb87] opacity-50" />
-      <video src="/hero.mp4" muted loop autoPlay className="relative">
+      <video
+        preload="auto"
+        src="/hero.mp4"
+        playsInline
+        muted
+        loop
+        autoPlay
+        className="absolute "
+      >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
     </section>
