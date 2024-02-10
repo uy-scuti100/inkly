@@ -198,7 +198,7 @@ export default function Navbar() {
         ref={menuRef}
         className="fixed top-0 left-0 flex justify-between w-screen h-screen text-white uppercase bg-black menu"
       >
-        <div className="flex flex-col justify-between px-5 pb-5">
+        <div className="flex flex-col justify-between px-5 mb-5">
           <div className="text-[2rem] pt-5">
             <Link to={"/"} className="relative" onClick={handleClose}>
               Inkly{" "}
@@ -207,7 +207,7 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-          <div className="flex flex-col gap-5 pb-10 text-2xl md:text-3xl md:pb-0 ">
+          <div className="flex flex-col gap-5 mb-10 text-2xl md:text-3xl md:pb-0 ">
             <div className="link" onClick={handleClose}>
               <Link to="/about">About</Link>
             </div>
@@ -231,7 +231,7 @@ export default function Navbar() {
 
         {/* tagline */}
 
-        <div className="flex flex-col items-center justify-between py-10 pl-5 text-lg md:text-2xl">
+        <div className="flex flex-col items-center justify-between pt-5 pl-5 text-lg -10 md:text-2xl">
           <div className="flex items-center gap-5 ">
             <p className="pl-5">
               Artistic <span className="text-[#ff9900] uppercase">Mastery</span>
@@ -288,7 +288,7 @@ export default function Navbar() {
               </p>
             </div>
           </div>
-          <div>
+          <div className="mb-10">
             <div>
               <Link to="/book" onClick={handleClose}>
                 Book a demo
