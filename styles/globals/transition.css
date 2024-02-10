@@ -1,0 +1,17 @@
+.transition-effect {
+  position: absolute;
+  z-index: 10000;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 1;
+  overflow: hidden;
+}
