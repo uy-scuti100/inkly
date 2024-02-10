@@ -1,5 +1,5 @@
 import React from "react";
-import Transition from "../components/globals/transition";
+import Transition from "../components/globals/Transition";
 import Navbar from "../components/globals/Navbar";
 
 export default function PageNotFound() {

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Transition from "../components/globals/transition";
+import Transition from "../components/globals/Transition";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Navbar from "../components/globals/Navbar";
