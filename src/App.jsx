@@ -9,7 +9,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import PageNotFound from "./pages/PageNotFound";
-import Faq from "./pages/faq";
+import Faq from "./pages/Faq";
 
 const Layout = () => {
   return (

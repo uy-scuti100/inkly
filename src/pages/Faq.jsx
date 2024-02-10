@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Navbar from "../components/globals/Navbar";
 
-export default function Team() {
+export default function Faq() {
   const faq = useRef();
   useGSAP(() => {
     const tl = gsap.timeline();
