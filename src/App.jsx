@@ -9,6 +9,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import PageNotFound from "./pages/PageNotFound";
+import Book from "./pages/Book";
 import Faq from "./pages/Faq";
 
 const Layout = () => {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/book",
+        element: <Book />,
       },
       {
         path: "/faq",

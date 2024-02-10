@@ -67,7 +67,7 @@ export default function Navbar() {
           isOpen
             ? " opacity-0 -translate-y-[1000px]"
             : "opacity-100 translate-y-[0]"
-        } duration-500 transition-all ease-in-out`}
+        } duration-500 transition-all ease-in-out backdrop-blur-3xl`}
       >
         <div className="nav-items">
           <div className="logo">
@@ -181,7 +181,7 @@ export default function Navbar() {
             }`}
           >
             <div className="link">
-              <Link to="/contact" className="whitespace-nowrap">
+              <Link to="/book" className="whitespace-nowrap">
                 Book Here
               </Link>
             </div>
@@ -231,10 +231,12 @@ export default function Navbar() {
 
         {/* tagline */}
 
-        <div className="flex flex-col items-center justify-between p-5 ml-4 text-lg md:text-2xl">
+        <div className="flex flex-col items-center justify-between py-10 pl-5 text-lg md:text-2xl">
           <div className="flex items-center gap-5 ">
-            <p>Automotive</p>
-            <div className="close-btn close">
+            <p className="pl-5">
+              Artistic <span className="text-[#ff9900] uppercase">Mastery</span>
+            </p>
+            <div className="pr-5 close-btn close">
               <svg
                 onClick={handleClose}
                 style={{ objectFit: "cover" }}
@@ -272,7 +274,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div>
+          <div className="ml-5">
             <div>
               <p to="/contact">
                 Talk with an expert <br /> at &nbsp;

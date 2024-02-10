@@ -14,7 +14,7 @@ export default function Herosection() {
         muted
         loop
         autoPlay
-        className="absolute "
+        className="absolute"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
