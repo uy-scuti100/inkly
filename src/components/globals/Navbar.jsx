@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "../../../styles/globals/navbar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
-import { FiArrowDownRight, FiArrowRight, FiExternalLink } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -207,7 +207,7 @@ export default function Navbar() {
       >
         <div className="flex flex-col justify-between ">
           <div className="text-[2rem]">
-            <Link to={"/"} className="relative" onClick={handleClose}>
+            <Link to={"/"} className="relative">
               Inkly{" "}
               <div className="text-[#ff9900] text-7xl absolute bottom-0 -right-5">
                 .
