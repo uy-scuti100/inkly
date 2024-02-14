@@ -22,7 +22,7 @@ export default function Navbar() {
       duration: 0.3,
       opacity: 1,
     });
-    // takes the menuref from its closed clippath polygon to the one below (which opens it halfway)havjng the same time as the one above and starting 300ms bwefore the abive, whuch technically looks like they will start together
+    // takes the menuref from its closed clippath polygon to the one below (which opens it halfway)havjng the same time as the one above and starting 300ms bwefore the above, whuch technically looks like they will start together
     tl.current.to(
       menuRef.current,
       {

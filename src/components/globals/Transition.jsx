@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "../../../styles/globals/transition.css";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
